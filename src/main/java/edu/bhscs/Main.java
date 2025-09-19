@@ -16,6 +16,7 @@ public class Main {
 
   public static final float NAME_OF_THIS_FLOAT = 69.420f;
   public static final char A = 'a';
+
   public static void main(String[] args) {
     System.out.println(7);
     System.out.println(awesome("hamburger"));
@@ -25,13 +26,12 @@ public class Main {
     Awesome shed = new Awesome("shed");
     Awesome john = new Awesome("john");
 
-
     System.out.println(steve.getName());
+    steve.learnSomething("head empty");
+    System.out.println(steve.getKnowledge());
     System.out.println(sue.getName());
     System.out.println(shed.getName());
     System.out.println(john.getName());
-
-
   }
 
   public static String awesome(String food) {
