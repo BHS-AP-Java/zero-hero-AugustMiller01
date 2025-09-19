@@ -23,16 +23,12 @@ public class Main {
     System.out.println(awesome("hamburger"));
 
     Awesome steve = new Awesome("steve");
-    Awesome sue = new Awesome("sue");
-    Awesome shed = new Awesome("shed");
-    Awesome john = new Awesome("john");
+    new Cake(){
+      
+    }
 
-    System.out.println(steve.getName());
-    steve.learnSomething("head empty");
-    System.out.println(steve.getKnowledge());
-    System.out.println(sue.getName());
-    System.out.println(shed.getName());
-    System.out.println(john.getName());
+
+
   }
 
   public static String awesome(String food) {
