@@ -1,5 +1,6 @@
 // August Miller
 // P2
+
 // Zero-Hero
 // 9/12
 
@@ -12,14 +13,31 @@
 
 package edu.bhscs;
 
-class Main {
-  public static void main(String[] args) {
+public class Main {
 
-    System.out.println("Hello World!");
-    System.out.println("  0/ ");
-    System.out.println(" /| ");
-    System.out.println("Goodbye World!");
-    System.out.println("  0/ ");
-    System.out.println(" /| ");
+  public static final float NAME_OF_THIS_FLOAT = 69.420f;
+  public static final char A = 'a';
+
+  public static void main(String[] args) {
+    System.out.println(7);
+    System.out.println(awesome("hamburger"));
+
+    Awesome steve = new Awesome("steve");
+    Awesome sue = new Awesome("sue");
+    Awesome shed = new Awesome("shed");
+    Awesome john = new Awesome("john");
+
+    System.out.println(steve.getName());
+    steve.learnSomething("head empty");
+    System.out.println(steve.getKnowledge());
+    System.out.println(sue.getName());
+    System.out.println(shed.getName());
+    System.out.println(john.getName());
+  }
+
+  public static String awesome(String food) {
+    return "sweat" + food;
   }
 }
+
+//REF!!!! DO SOMETHING!!!!!!!!!
