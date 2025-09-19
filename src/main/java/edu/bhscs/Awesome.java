@@ -17,11 +17,19 @@ public class Awesome {
     System.out.println("----------------------------------------------------");
     System.out.println();
     if (name == "steve") {
-      return "Oh wait... " + name + "! Thats my name!" + " I am " + age + " years old."
+      return "Oh wait... "
+          + name
+          + "! Thats my name!"
+          + " I am "
+          + age
+          + " years old."
           + meanRemark(age);
 
     } else if (name == "shed") {
-      return "My name is Shed and I like chicken" + " I am " + age + " years old."
+      return "My name is Shed and I like chicken"
+          + " I am "
+          + age
+          + " years old."
           + meanRemark(age);
     } else {
       return "My name is " + name + "." + " I am " + age + " years old." + meanRemark(age);
