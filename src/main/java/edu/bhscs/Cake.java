@@ -8,11 +8,11 @@ public class Cake {
     this.ingredient = ingredient;
     this.frosting = frosting;
     this.weight = 10;
-    System.out.println("ooo a "+ ingredient + " cake with " + frosting + " frosting!");
+    System.out.println("he baked a "+ ingredient + " cake with " + frosting + " frosting!");
 
 
   }
-  //do you work now??
+
   public void eatCake(int hunger, String name){
     System.out.println();
     this.weight -= hunger;
