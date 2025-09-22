@@ -3,11 +3,12 @@ package edu.bhscs;
 public class Awesome {
   String name;
   String knowledge;
+  int hunger;
 
-  public Awesome(String name) {
-    System.out.print("Enter your name: ");
+  public Awesome(String name, int hunger) {
 
     this.name = name;
+    this.hunger = hunger;
   }
 
   String getName() {
