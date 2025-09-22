@@ -12,6 +12,7 @@ public class Cake {
 
 
   }
+  //do you work now??
   public void eatCake(int hunger, String name){
     System.out.println();
     this.weight -= hunger;
