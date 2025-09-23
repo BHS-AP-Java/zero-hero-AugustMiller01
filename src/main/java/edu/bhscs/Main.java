@@ -31,14 +31,11 @@ public class Main {
 
     Baker myBaker = new Baker();
 
-
     Awesome steve = new Awesome("steve", 2);
     Awesome sue = new Awesome("sue", 7);
 
-
     Cake firstCake = myBaker.BakeCake("Chocolate", "vanilla");
     Cake secondCake = myBaker.BakeCake("Red velvet", "no");
-
 
     firstCake.eatCake(steve.hunger, steve.name);
     firstCake.getWeight();

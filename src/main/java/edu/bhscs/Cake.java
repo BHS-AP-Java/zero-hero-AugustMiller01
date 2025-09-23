@@ -3,25 +3,49 @@ package edu.bhscs;
 public class Cake {
   String ingredient;
   String frosting;
+  int price;
   int weight;
-  public Cake(String ingredient,String frosting){
+
+  public Cake(String ingredient, String frosting) {
     this.ingredient = ingredient;
     this.frosting = frosting;
     this.weight = 10;
-    System.out.println("he baked a "+ ingredient + " cake with " + frosting + " frosting!");
-
-
+    int min = 1;
+    int max = 99;
+    int i = (int) (Math.random() * (max - min + 1)) + min;
+    this.price = i;
+    System.out.println(
+        "he baked a "
+            + ingredient
+            + " cake with "
+            + frosting
+            + " frosting! It costs $"
+            + price
+            + ".");
   }
 
-  public void eatCake(int hunger, String name){
+  public void eatCake(int hunger, String name) {
     System.out.println();
     this.weight -= hunger;
-    System.out.println(name + " ate " + hunger + " slices of the " + ingredient + " cake with " + frosting + " frosting");
-
-
+    System.out.println(
+        name
+            + " ate "
+            + hunger
+            + " slices of the "
+            + ingredient
+            + " cake with "
+            + frosting
+            + " frosting");
   }
-  public void getWeight(){
-    System.out.println("the " + ingredient + " cake with " + frosting + " frosting has "+ weight +" slices left;");
-  }
 
+  public void getWeight() {
+    System.out.println(
+        "the "
+            + ingredient
+            + " cake with "
+            + frosting
+            + " frosting has "
+            + weight
+            + " slices left;");
+  }
 }

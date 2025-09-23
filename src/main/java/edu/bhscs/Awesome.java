@@ -4,8 +4,9 @@ public class Awesome {
   String name;
   String knowledge;
   int hunger;
+  int budget;
 
-  public Awesome(String name,int hunger) {
+  public Awesome(String name, int hunger) {
 
     this.name = name;
     this.hunger = hunger;
