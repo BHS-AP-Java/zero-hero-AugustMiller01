@@ -25,7 +25,10 @@ public class Baker {
     System.out.println("The Baker responsible for your cakes today will be " + name + ".");
   }
 
-  public Cake BakeCake(String ingredient, String frosting) {
-    return new Cake(ingredient, frosting);
+  public Cake BakeCake(String ingredient, String frosting,Bakery bakery) {
+
+    Cake cake = new Cake(ingredient, frosting);
+    bakery.AddCakeToMenu(cake);
+    return cake;
   }
 }

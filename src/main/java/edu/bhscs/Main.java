@@ -15,28 +15,32 @@ package edu.bhscs;
 
 public class Main {
 
-  public static final float NAME_OF_THIS_FLOAT = 69.420f;
-  public static final char A = 'a';
-
   public static void main(String[] args) {
 
-    System.out.println(7);
-    System.out.println(awesome("hamburger"));
+    System.out.println();
+    System.out.println();
+    System.out.println();
     System.out.println();
     System.out.println();
 
-    System.out.println();
-    System.out.println();
-    System.out.println();
-
+    //create bakery and baker
+    Bakery myBakery = new Bakery();
     Baker myBaker = new Baker();
 
+    // fat customers
     Awesome steve = new Awesome("steve", 2);
     Awesome sue = new Awesome("sue", 7);
 
-    Cake firstCake = myBaker.BakeCake("Chocolate", "vanilla");
-    Cake secondCake = myBaker.BakeCake("Red velvet", "no");
+    //Baker earning his keep
+    Cake firstCake = myBaker.BakeCake("Chocolate", "vanilla",myBakery);
+    Cake secondCake = myBaker.BakeCake("Red velvet", "no",myBakery);
+    Cake thirdCake = myBaker.BakeCake("Vanilla", "cheap", myBakery);
 
+
+    //pretty self explanitory
+    myBakery.DisplayMenu();
+
+    //poor cakes...
     firstCake.eatCake(steve.hunger, steve.name);
     firstCake.getWeight();
 
@@ -44,9 +48,4 @@ public class Main {
     secondCake.getWeight();
   }
 
-  public static String awesome(String food) {
-    return "sweat" + food;
-  }
 }
-
-// REF!!!! DO SOMETHING!!!!!!!!!

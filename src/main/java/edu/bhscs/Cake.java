@@ -11,17 +11,10 @@ public class Cake {
     this.frosting = frosting;
     this.weight = 10;
     int min = 1;
-    int max = 99;
+    int max = 130;
     int i = (int) (Math.random() * (max - min + 1)) + min;
     this.price = i;
-    System.out.println(
-        "he baked a "
-            + ingredient
-            + " cake with "
-            + frosting
-            + " frosting! It costs $"
-            + price
-            + ".");
+
   }
 
   public void eatCake(int hunger, String name) {
@@ -46,6 +39,6 @@ public class Cake {
             + frosting
             + " frosting has "
             + weight
-            + " slices left;");
+            + " slices left");
   }
 }
