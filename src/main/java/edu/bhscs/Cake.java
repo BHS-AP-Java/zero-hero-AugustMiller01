@@ -14,7 +14,6 @@ public class Cake {
     int max = 130;
     int i = (int) (Math.random() * (max - min + 1)) + min;
     this.price = i;
-
   }
 
   public void eatCake(int hunger, String name) {
