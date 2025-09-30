@@ -2,7 +2,9 @@ package edu.bhscs;
 
 public class Baker {
   String name;
-
+  Bakery myBakery;
+  int skill;
+  int experience = 0;
   public Baker() {
     int min = 1;
     int max = 5;
@@ -27,8 +29,9 @@ public class Baker {
 
   public Cake BakeCake(String ingredient, String frosting, Bakery bakery) {
 
-    Cake cake = new Cake(ingredient, frosting);
+    Cake cake = new Cake(ingredient, frosting,bakery.myFlour);
     bakery.AddCakeToMenu(cake);
+    experience ++;
     return cake;
   }
 }

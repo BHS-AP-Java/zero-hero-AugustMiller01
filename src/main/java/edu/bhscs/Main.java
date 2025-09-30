@@ -26,24 +26,30 @@ public class Main {
     // create bakery and baker
     Bakery myBakery = new Bakery();
     Baker myBaker = new Baker();
+    PTSA thePTSA = new PTSA();
+
+    myBakery.GetFlour();
 
     // fat customers
     Awesome steve = new Awesome("steve", 2);
     Awesome sue = new Awesome("sue", 7);
 
-    // Baker earning his keep
+    // Baker bakes
     Cake firstCake = myBaker.BakeCake("Chocolate", "vanilla", myBakery);
     Cake secondCake = myBaker.BakeCake("Red velvet", "no", myBakery);
     Cake thirdCake = myBaker.BakeCake("Vanilla", "cheap", myBakery);
 
-    // pretty self explanitory
+    // displays todays menu
     myBakery.DisplayMenu();
 
-    // poor cakes...
-    firstCake.eatCake(steve.hunger, steve.name);
-    firstCake.getWeight();
+    myBakery.BuyCake(firstCake, steve.name);
+    myBakery.BuyCake(secondCake, sue.name);
 
+    System.out.println();
     secondCake.eatCake(sue.hunger, sue.name);
-    secondCake.getWeight();
+    firstCake.eatCake(steve.hunger, steve.name);
+
+    System.out.println();
+    thePTSA.DontateToPTSA(myBakery.money);
   }
 }
