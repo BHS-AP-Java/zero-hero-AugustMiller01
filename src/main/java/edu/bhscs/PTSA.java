@@ -6,7 +6,8 @@ public class PTSA {
   public PTSA() {}
 
   public void DontateToPTSA(int money) {
-    this.money = money;
-    System.out.println("Money donated to PTSA: $" + money);
+
+    this.money = money / 2;
+    System.out.println("Money donated to PTSA: $" + money / 2);
   }
 }

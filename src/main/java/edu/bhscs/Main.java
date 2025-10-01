@@ -5,9 +5,9 @@
 // 9/12
 
 /*
- * DESCRIPTION: Whatever Mr.Reiber says
+ * DESCRIPTION: Bakery bakes cakes that can be bought by customers
  * INPUT: we don't know about input yet
- * OUTPUT:Some cool words inthe command line terminal thing
+ * OUTPUT:Some cool words in the command line terminal thing
  * EDGE CASE:THey are all edge cases
  */
 
@@ -17,6 +17,7 @@ public class Main {
 
   public static void main(String[] args) {
 
+    // padding
     System.out.println();
     System.out.println();
     System.out.println();
@@ -38,18 +39,25 @@ public class Main {
     Cake firstCake = myBaker.BakeCake("Chocolate", "vanilla", myBakery);
     Cake secondCake = myBaker.BakeCake("Red velvet", "no", myBakery);
     Cake thirdCake = myBaker.BakeCake("Vanilla", "cheap", myBakery);
-
+    Cake fourthCake = myBaker.BakeCake("vegan", "fruit", myBakery);
+    Cake fifthCake = myBaker.BakeCake("Ice cream", "Chocolate", myBakery);
     // displays todays menu
     myBakery.DisplayMenu();
 
-    myBakery.BuyCake(firstCake, steve.name);
-    myBakery.BuyCake(secondCake, sue.name);
+    // people buy cake
+    myBakery.SellCake(firstCake, steve);
+    myBakery.SellCake(secondCake, sue);
 
     System.out.println();
+
+    // people eat cake
     secondCake.eatCake(sue.hunger, sue.name);
     firstCake.eatCake(steve.hunger, steve.name);
 
+    // money donated to the PTSA
     System.out.println();
+    System.out.println("Total Money: $" + myBakery.money);
     thePTSA.DontateToPTSA(myBakery.money);
+
   }
 }

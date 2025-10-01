@@ -6,8 +6,9 @@ public class Cake {
   int price;
   int weight;
   Flour flour;
+  String name;
 
-  public Cake(String ingredient, String frosting,Flour flour) {
+  public Cake(String ingredient, String frosting, Flour flour) {
     this.ingredient = ingredient;
     this.frosting = frosting;
     this.weight = 10;
@@ -16,6 +17,7 @@ public class Cake {
     int max = 130;
     int i = (int) (Math.random() * (max - min + 1)) + min;
     this.price = i;
+    this.name = ingredient + "cake with " + frosting + " frosting.";
   }
 
   public void eatCake(int hunger, String name) {
