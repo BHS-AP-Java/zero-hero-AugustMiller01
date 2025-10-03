@@ -35,21 +35,18 @@ public class Baker {
     experience++;
 
     hunger++;
-    if(hunger < 4){
+    if (hunger < 4) {
       System.out.println("(he hungers...)");
       bakery.AddCakeToMenu(cake);
       return cake;
 
-    }else{
+    } else {
       System.out.println("(he feasts...)");
       Cake cake2 = new Cake("null", frosting, bakery.myFlour);
       bakery.AddCakeToMenu(cake2);
 
       hunger = 0;
       return cake2;
-
     }
-
-
   }
 }

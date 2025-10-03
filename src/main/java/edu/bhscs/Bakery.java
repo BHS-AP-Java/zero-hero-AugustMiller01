@@ -20,16 +20,14 @@ public class Bakery {
     System.out.println();
     System.out.println("MENU");
 
-
     for (Cake cake : cakes) {
-      if(cake.ingredient != "null"){
+      if (cake.ingredient != "null") {
         System.out.println(
             " " + cake.ingredient + " cake with " + cake.frosting + " frosting - $" + cake.price);
 
-      }else{
+      } else {
         System.out.println(" (The hungry one ate this cake...) - $---");
       }
-
     }
 
     System.out.println();
@@ -46,8 +44,6 @@ public class Bakery {
             + cake.frosting
             + " frosting for $"
             + cake.price);
-
-
   }
 
   public void GetMoney() {
