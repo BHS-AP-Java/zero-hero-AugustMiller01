@@ -18,7 +18,7 @@ public class Main {
   public static void main(String[] args) {
 
     // padding
-    /*System.out.println();
+    System.out.println();
     System.out.println();
     System.out.println();
     System.out.println();
@@ -58,6 +58,6 @@ public class Main {
     System.out.println();
     System.out.println("Total Money: $" + myBakery.money);
     thePTSA.DontateToPTSA(myBakery.money);
-    */
+    
   }
 }
