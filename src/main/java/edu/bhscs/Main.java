@@ -24,7 +24,7 @@ public class Main {
     System.out.println();
     System.out.println();
 
-    // create bakery and baker
+    // create bakery, baker and ptsa.
     Bakery myBakery = new Bakery();
     Baker myBaker = new Baker();
     PTSA thePTSA = new PTSA();
@@ -44,7 +44,7 @@ public class Main {
     // displays todays menu
     myBakery.DisplayMenu();
 
-    // people buy cake
+    // Cakes get sold
     myBakery.SellCake(firstCake, steve);
     myBakery.SellCake(secondCake, sue);
 
@@ -58,6 +58,6 @@ public class Main {
     System.out.println();
     System.out.println("Total Money: $" + myBakery.money);
     thePTSA.DontateToPTSA(myBakery.money);
-    
+
   }
 }
