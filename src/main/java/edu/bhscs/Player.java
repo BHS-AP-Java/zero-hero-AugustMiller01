@@ -16,4 +16,9 @@ public class Player {
     String question = this.scanner.next();
     System.out.println(question + "? thats a stupid question.");
   }
+
+  public String giveAnswer(String question) {
+    System.out.println(question);
+    return scanner.next();
+  }
 }

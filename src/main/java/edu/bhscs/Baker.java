@@ -1,52 +1,53 @@
 package edu.bhscs;
 
 public class Baker {
-  String name;
-  Bakery myBakery;
-  int skill;
-  int experience = 0;
-  int hunger = 0;
+  // PROPERTIES AND FIELDS
+  Player p;
+  Flour f;
+  Bakery placeOfWork;
+  int cash;
 
-  public Baker() {
-    int min = 1;
-    int max = 5;
-    int namei = (int) (Math.random() * (max - min + 1)) + min;
-    if (namei == 1) {
-      this.name = "John";
-
-    } else if (namei == 2) {
-      this.name = "Megatron";
-
-    } else if (namei == 3) {
-      this.name = "Gus";
-
-    } else if (namei == 4) {
-      this.name = "Jeff Bezos";
-
-    } else if (namei == 5) {
-      this.name = "Elon";
-    }
-    System.out.println("The Baker responsible for your cakes today will be " + name + ".");
+  // CONSTRUCTOR
+  public Baker(Player p) {
+    this.p = p;
   }
 
-  public Cake BakeCake(String ingredient, String frosting, Bakery bakery) {
-    Cake cake = new Cake(ingredient, frosting, bakery.myFlour);
+  // METHODS
+  void takeOrder(int price, Awesome c) {
+    cash += c.pay(price);
+    c.takeCake(bakeCake());
+  }
 
-    experience++;
+  Cake bakeCake() {
+    String answer = this.p.giveAnswer("what cake do you you want?");
+    return new Cake(answer, this.f);
+  }
 
-    hunger++;
-    if (hunger < 4) {
-      System.out.println("(he hungers...)");
-      bakery.AddCakeToMenu(cake);
-      return cake;
-
-    } else {
-      System.out.println("(he feasts...)");
-      Cake cake2 = new Cake("null", frosting, bakery.myFlour);
-      bakery.AddCakeToMenu(cake2);
-
-      hunger = 0;
-      return cake2;
+  void takeJob(Bakery bakery) {
+    String doYouWantToWorkHere = this.p.giveAnswer("Do you want to work at " + bakery.getName());
+    if (doYouWantToWorkHere.equals("y")) {
+      this.placeOfWork = bakery;
+      System.out.println(this.name + " now works at " + bakery.getName());
     }
+  }
+
+  public FrostedCake FrostCake(Cake cake) {
+
+    String answer = p.giveAnswer("Do you want frosting on your cake? (y/n)");
+    if(answer == "y"){
+      String frost = p.giveAnswer("What kind of frosting do you want?");
+      return new FrostedCake(cake, frost);
+
+
+
+    }else if(answer == "n"){
+      System.out.println("Ok, unfrosted it is then.");
+      return new FrostedCake(cake, "no");
+    }else{
+      return new FrostedCake(cake, "no");
+
+    }
+
+
   }
 }

@@ -34,6 +34,7 @@ public class Bakery {
   }
 
   public void SellCake(Cake cake, Awesome customer) {
+
     money += cake.price;
     customer.ownedCake = cake;
     System.out.println(
@@ -48,5 +49,20 @@ public class Bakery {
 
   public void GetMoney() {
     System.out.println("Total money: $" + money);
+  }
+
+  public void SellCakeToPlayer(Cake cake, Player p) {
+
+    String answer = p.giveAnswer("What cake do you want? (_____ with _____ frosting)");
+
+    money += cake.price;
+
+    System.out.println(
+        "you bought the "
+            + cake.ingredient
+            + " cake with "
+            + cake.frosting
+            + " frosting for $"
+            + cake.price);
   }
 }
