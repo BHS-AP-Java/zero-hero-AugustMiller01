@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Bakery {
   public int money = 0;
+  String bakeryName = "Rolling in the Dough";
   public Flour myFlour;
   List<Cake> cakes = new ArrayList<>();
 
@@ -64,5 +65,8 @@ public class Bakery {
             + cake.frosting
             + " frosting for $"
             + cake.price);
+  }
+  public String GetName(){
+    return bakeryName;
   }
 }

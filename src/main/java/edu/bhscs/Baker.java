@@ -6,12 +6,18 @@ public class Baker {
   Flour f;
   Bakery placeOfWork;
   int cash;
+  int skill;
+  String name;
 
   // CONSTRUCTOR
   public Baker(Player p) {
     this.p = p;
   }
 
+  public void learn(int amount){
+    this.skill += amount;
+
+  }
   // METHODS
   void takeOrder(int price, Awesome c) {
     cash += c.pay(price);
@@ -20,34 +26,44 @@ public class Baker {
 
   Cake bakeCake() {
     String answer = this.p.giveAnswer("what cake do you you want?");
-    return new Cake(answer, this.f);
+    learn(1);
+    return new Cake(answer, this.f,this.skill);
   }
 
   void takeJob(Bakery bakery) {
-    String doYouWantToWorkHere = this.p.giveAnswer("Do you want to work at " + bakery.getName());
+    String doYouWantToWorkHere = this.p.giveAnswer("Do you want to work at " + bakery.GetName()+"?");
     if (doYouWantToWorkHere.equals("y")) {
       this.placeOfWork = bakery;
-      System.out.println(this.name + " now works at " + bakery.getName());
+      System.out.println(this.name + " now works at " + bakery.GetName());
     }
   }
 
-  public FrostedCake FrostCake(Cake cake) {
+  public void FrostCake(Cake cake) {
 
     String answer = p.giveAnswer("Do you want frosting on your cake? (y/n)");
-    if(answer == "y"){
+
+    if (answer.equals("y")) {
       String frost = p.giveAnswer("What kind of frosting do you want?");
-      return new FrostedCake(cake, frost);
 
+      cake.SetFrosting(frost);
 
+      ;
 
-    }else if(answer == "n"){
+    } else if (answer.equals("n")) {
       System.out.println("Ok, unfrosted it is then.");
-      return new FrostedCake(cake, "no");
-    }else{
-      return new FrostedCake(cake, "no");
-
+      cake.SetFrosting("no");
+      ;
+    } else {
+      cake.SetFrosting("no");
+      ;
     }
 
+  }
 
+  public void FinishUpCake(Cake cake,Bakery myBakery){
+    myBakery.AddCakeToMenu(cake);
+    System.out.println("you want a " + cake.ingredient + " cake with " + cake.frosting
+        + " frosting? you got it!");
+    cake.DisplayQuality();
   }
 }

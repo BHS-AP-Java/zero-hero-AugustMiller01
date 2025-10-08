@@ -27,7 +27,7 @@ public class OriginalMain {
 
     // create bakery, baker and ptsa.
     Bakery myBakery = new Bakery();
-    Baker myBaker = new Baker();
+    Baker myBaker = new Baker(p);
     PTSA thePTSA = new PTSA();
     Player p = new Player("August");
 

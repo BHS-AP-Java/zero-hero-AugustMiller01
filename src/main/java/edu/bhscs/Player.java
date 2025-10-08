@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Player {
   String name;
   Scanner scanner = new Scanner(System.in);
+  int accomplishments;
 
   public Player(String name) {
     this.name = name;
@@ -20,5 +21,8 @@ public class Player {
   public String giveAnswer(String question) {
     System.out.println(question);
     return scanner.next();
+  }
+  public void accomplish(int amount){
+    this.accomplishments += amount;
   }
 }

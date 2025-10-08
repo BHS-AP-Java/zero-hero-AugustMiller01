@@ -25,9 +25,24 @@ public class Main {
     Awesome sue = new Awesome("sue", 7);
 
     // Baker bakes
-    myBaker.takeOrder(3, sue);
-    Cake unfrostedCake = myBaker.bakeCake();
-    FrostedCake frostedCake = myBaker.FrostCake(unfrostedCake);
+    myBaker.takeJob(myBakery);
+
+    Cake cake1 = myBaker.bakeCake();
+    myBaker.FrostCake(cake1);
+    myBaker.FinishUpCake(cake1,myBakery);
+
+    Cake cake2 = myBaker.bakeCake();
+    myBaker.FrostCake(cake2);
+    myBaker.FinishUpCake(cake2, myBakery);
+
+    Cake cake3 = myBaker.bakeCake();
+    myBaker.FrostCake(cake3);
+    myBaker.FinishUpCake(cake3, myBakery);
+
+
+
+
+
 
     // Cakes get sold
 
