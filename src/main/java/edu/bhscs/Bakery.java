@@ -35,7 +35,7 @@ public class Bakery {
 
         // drawCake
 
-        int x = (int) (Math.random() * (7 - 5 + 1)) + 5;
+        int x = (int) (Math.random() * (8 - 6 + 1)) + 5;
         int y = (int) (Math.random() * (8 - 3 + 1)) + 3;
         int z = (int) (Math.random() * (7 - 1 + 1)) + 1;
         int slope = (int) (Math.random() * (2 - 1 + 1)) + 1;
