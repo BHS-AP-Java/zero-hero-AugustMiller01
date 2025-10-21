@@ -1,5 +1,12 @@
 package edu.bhscs;
 
+// August Miller
+// P2
+// Bake Sale
+// 10/8
+// * having a baker work in a bakery, bake cakes, and have customers able to buy said cakes.
+// *Then donate the money to the PTSA.
+
 import java.util.Scanner;
 
 public class Player {
@@ -22,7 +29,14 @@ public class Player {
     System.out.println(question);
     return scanner.next();
   }
-  public void accomplish(int amount){
+
+  public int giveNumber(String question) {
+    System.out.println(question);
+    String s = scanner.next();
+    return (Integer.parseInt(s));
+  }
+
+  public void accomplish(int amount) {
     this.accomplishments += amount;
   }
 }

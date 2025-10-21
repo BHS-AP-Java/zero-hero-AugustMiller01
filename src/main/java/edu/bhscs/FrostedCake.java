@@ -1,5 +1,11 @@
 package edu.bhscs;
 
+// August Miller
+// P2
+// Bake Sale
+// 10/9
+// * having a baker work in a bakery, bake cakes, and have customers able to buy said cakes.
+// *Then donate the money to the PTSA.
 public class FrostedCake {
   String ingredient;
   String frosting;

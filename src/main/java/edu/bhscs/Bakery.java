@@ -3,6 +3,13 @@ package edu.bhscs;
 import java.util.ArrayList;
 import java.util.List;
 
+// August Miller
+// P2
+// Bake Sale
+// 10/3
+// * having a baker work in a bakery, bake cakes, and have customers able to buy said cakes.
+// *Then donate the money to the PTSA.
+
 public class Bakery {
   public int money = 0;
   String bakeryName = "Rolling in the Dough";
@@ -25,6 +32,16 @@ public class Bakery {
       if (cake.ingredient != "null") {
         System.out.println(
             " " + cake.ingredient + " cake with " + cake.frosting + " frosting - $" + cake.price);
+
+        // drawCake
+
+        int x = (int) (Math.random() * (7 - 5 + 1)) + 5;
+        int y = (int) (Math.random() * (8 - 3 + 1)) + 3;
+        int z = (int) (Math.random() * (7 - 1 + 1)) + 1;
+        int slope = (int) (Math.random() * (2 - 1 + 1)) + 1;
+        int stagger = (int) (Math.random() * (2 - 1 + 1)) + 1;
+        cake.DrawCake(x, y, z, slope, stagger, cake.frosting);
+        System.out.println();
 
       } else {
         System.out.println(" (The hungry one ate this cake...) - $---");
@@ -66,7 +83,8 @@ public class Bakery {
             + " frosting for $"
             + cake.price);
   }
-  public String GetName(){
+
+  public String GetName() {
     return bakeryName;
   }
 }
