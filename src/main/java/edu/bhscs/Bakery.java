@@ -35,12 +35,13 @@ public class Bakery {
 
         // drawCake
 
-        int x = (int) (Math.random() * (8 - 6 + 1)) + 5;
-        int y = (int) (Math.random() * (8 - 3 + 1)) + 3;
-        int z = (int) (Math.random() * (7 - 1 + 1)) + 1;
-        int slope = (int) (Math.random() * (2 - 1 + 1)) + 1;
-        int stagger = (int) (Math.random() * (2 - 1 + 1)) + 1;
-        cake.DrawCake(x, y, z, slope, stagger, cake.frosting);
+
+
+
+
+
+        cake.DrawCake(cake.x, cake.y, cake.z, 1, cake.stagger, cake.frosting);
+   
         System.out.println();
 
       } else {

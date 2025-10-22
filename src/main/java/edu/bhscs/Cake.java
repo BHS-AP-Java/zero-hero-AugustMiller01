@@ -15,6 +15,11 @@ public class Cake {
   int quality;
   Flour flour;
   String name;
+  int x;
+  int y;
+  int stagger;
+  int z;
+
 
   public Cake(String ingredient, Flour flour, int quality) {
     this.ingredient = ingredient;
@@ -26,6 +31,7 @@ public class Cake {
     int i = (int) (Math.random() * (max - min + 1)) + min;
     this.price = i;
     this.name = ingredient + "cake.";
+
   }
 
   public void eatCake(int hunger, String name) {
@@ -89,7 +95,6 @@ public class Cake {
     // Draw cake base
     int baseWidth = x + 2 * transAxis * slope;
     PrintChars("|", 0, "=", "|", baseWidth);
-    
   }
 
   public void DrawTopBorder(int maxWidth, int slope, int transAxis) {

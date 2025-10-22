@@ -2,12 +2,13 @@ package edu.bhscs;
 
 public class App {
 
-  public static void main(){
+  public static void main(String[] args) {
     date_10_21();
-    System.out.println("I am the app");
-  }
-  public static void date_10_21(){
-    System.out.println("todays work");
   }
 
+  public static void date_10_21() {
+    Player user = new Player("me");
+
+    new Cake2().draw("Me", "3");
+  }
 }
