@@ -28,14 +28,15 @@ public class Main {
     Burger myBurger = new Burger();
     myBakery.GetFlour();
 
-    myBaker.takeJob(myBakery);
+    // myBaker.takeJob(myBakery);
 
     myBaker.BakeCakes(cakesToBake, myBakery);
 
     myBakery.DisplayMenu();
 
     // Cakes get sold
-
+    myBakery.SellCakeToPlayer(p);
+    myBakery.DisplayMenu();
     // money donated to the PTSA
     // System.out.println();
     // System.out.println("Total Money: $" + myBakery.money);

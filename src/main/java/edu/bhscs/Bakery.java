@@ -20,6 +20,15 @@ public class Bakery {
     cakes.add(cake);
   }
 
+  public void removeCakeFromMenu(Cake cake) {
+    for (Cake menuCakes : cakes) {
+      if (menuCakes.ingredient.equals(cake.ingredient)
+          && menuCakes.frosting.equals(cake.frosting)) {
+        cakes.remove(cake);
+      }
+    }
+  }
+
   public void GetFlour() {
     myFlour = new Flour(3, 3, 5);
   }
@@ -35,13 +44,8 @@ public class Bakery {
 
         // drawCake
 
-
-
-
-
-
         cake.DrawCake(cake.x, cake.y, cake.z, 1, cake.stagger, cake.frosting);
-   
+
         System.out.println();
 
       } else {
@@ -70,19 +74,23 @@ public class Bakery {
     System.out.println("Total money: $" + money);
   }
 
-  public void SellCakeToPlayer(Cake cake, Player p) {
+  public void SellCakeToPlayer(Player p) {
 
-    String answer = p.giveAnswer("What cake do you want? (_____ with _____ frosting)");
+    String answer = p.giveAnswer("What cake do you want? (cake flavor)");
 
-    money += cake.price;
-
-    System.out.println(
-        "you bought the "
-            + cake.ingredient
-            + " cake with "
-            + cake.frosting
-            + " frosting for $"
-            + cake.price);
+    for (Cake cake : cakes) {
+      if (cake.ingredient.equals(answer)) {
+        money += cake.price;
+        System.out.println(
+            "you bought the "
+                + cake.ingredient
+                + " cake with "
+                + cake.frosting
+                + " frosting for $"
+                + cake.price);
+        removeCakeFromMenu(cake);
+      }
+    }
   }
 
   public String GetName() {

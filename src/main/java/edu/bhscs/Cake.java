@@ -17,9 +17,9 @@ public class Cake {
   String name;
   int x;
   int y;
+  boolean drawFlat = false;
   int stagger;
   int z;
-
 
   public Cake(String ingredient, Flour flour, int quality) {
     this.ingredient = ingredient;
@@ -31,7 +31,6 @@ public class Cake {
     int i = (int) (Math.random() * (max - min + 1)) + min;
     this.price = i;
     this.name = ingredient + "cake.";
-
   }
 
   public void eatCake(int hunger, String name) {
@@ -73,14 +72,18 @@ public class Cake {
     // Draw cake layers
     int lastLeftSpace = (transAxis) * slope;
     int lastWidth = x + 2 * 0 * slope;
+
     for (int a = 0; a < transAxis; a++) {
       int leftSpace = lastLeftSpace;
       int currentWidth = lastWidth;
       if (a == 0 || a % stagger == 0) {
+
         leftSpace = (transAxis - a) * slope;
         currentWidth = x + 2 * a * slope;
         lastLeftSpace = leftSpace;
         lastWidth = currentWidth;
+      } else {
+
       }
 
       // Adjust left indentation for each layer
@@ -122,5 +125,32 @@ public class Cake {
     // Add end character
     temp.append(end);
     System.out.println(temp.toString());
+  }
+
+  public void DrawTable(int legs, int width) {
+    {
+      for (int i = 0; i < width; i++) {
+        // Draw table Here
+        System.out.print("=");
+      }
+      int spaceing = ((width-(legs*2)) / legs) ;
+      //each row
+      for(int i = 0; i <4; i++){
+        System.out.println("");
+        //each collum
+        for(int y = 0;y<= legs; y++){
+          //spaces and legs
+          System.out.print("||");
+
+          for(int x = 0;x<spaceing;x++){
+            System.out.print(" ");
+          }
+        }
+
+
+
+      }
+
+    }
   }
 }

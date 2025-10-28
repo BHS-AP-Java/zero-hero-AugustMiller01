@@ -76,30 +76,27 @@ public class Baker {
 
     String size = p.giveAnswer("What size of cake do you want? (s/m/l)");
 
-    if(size.equals("s")){
+    if (size.equals("s")) {
       cake.stagger = 1;
       cake.y = 4;
       cake.x = 4;
       cake.z = 3;
-    }
-    else if (size.equals("m")) {
+    } else if (size.equals("m")) {
       cake.stagger = 2;
       cake.y = 6;
       cake.x = 6;
       cake.z = 6;
-    }
-    else if (size.equals("l")) {
+    } else if (size.equals("l")) {
       cake.stagger = 2;
       cake.y = 11;
       cake.x = 10;
       cake.z = 8;
-    }else{
+    } else {
       cake.y = (int) (Math.random() * (8 - 3 + 1)) + 3;
       cake.x = (int) (Math.random() * (9 - 3 + 1)) + 3;
       cake.stagger = (int) (Math.random() * (2 - 1 + 1)) + 1;
-      cake.z =(int) (Math.random() * (7 - 1 + 1)) + 1;
+      cake.z = (int) (Math.random() * (7 - 1 + 1)) + 1;
     }
-
   }
 
   public void FinishUpCake(Cake cake, Bakery myBakery) {
