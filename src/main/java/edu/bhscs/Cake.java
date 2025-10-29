@@ -97,6 +97,8 @@ public class Cake {
 
     // Draw cake base
     int baseWidth = x + 2 * transAxis * slope;
+
+
     PrintChars("|", 0, "=", "|", baseWidth);
   }
 
@@ -127,30 +129,34 @@ public class Cake {
     System.out.println(temp.toString());
   }
 
-  public void DrawTable(int legs, int width) {
-    {
-      for (int i = 0; i < width; i++) {
-        // Draw table Here
-        System.out.print("=");
-      }
-      int spaceing = ((width-(legs*2)) / legs) ;
-      //each row
-      for(int i = 0; i <4; i++){
-        System.out.println("");
-        //each collum
-        for(int y = 0;y<= legs; y++){
-          //spaces and legs
-          System.out.print("||");
+  public void DrawTable(int legs, int width,int legWidth) {
+    int spacing = ((width - (legs * legWidth)) / legs);
+    int remainder = width % (legWidth + spacing);
+    width -= remainder;
+    for (int i = 0; i < width; i++) {
+      // Draw table Here
 
-          for(int x = 0;x<spaceing;x++){
-            System.out.print(" ");
-          }
-        }
-
-
-
-      }
-
+      System.out.print("=");
     }
+
+
+
+
+    // each row
+    for (int i = 0; i < 4; i++) {
+      System.out.println("");
+
+      // each collum
+      for (int y = 0; y < legs; y++) {
+        // spaces and legs
+        System.out.print("||");
+
+        for (int x = 0; x <= spacing; x++) {
+
+          System.out.print(" ");
+        }
+      }
+    }
+
   }
 }

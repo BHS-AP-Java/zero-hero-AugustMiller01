@@ -19,7 +19,6 @@ public class App {
     Cake cake = bob.bakeCake();
     bob.FrostCake(cake);
     cake.DrawCake(9, 5, 9, 1, 1, ")");
-    cake.DrawTable(4, 21);
-   
+    cake.DrawTable(4, 21,2);
   }
 }
