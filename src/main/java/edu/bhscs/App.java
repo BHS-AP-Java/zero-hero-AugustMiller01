@@ -15,11 +15,13 @@ public class App {
   public static void date_10_27() {
     Player p = new Player("Me");
     Baker bob = new Baker(p);
-    Table t = new Table(3, 15);
+    Table t = new Table(3, 24);
     Cake cake = bob.bakeCake();
     bob.FrostCake(cake);
-    cake.DrawCake(9, 5, 9, 1, 1, ")");
-    //cake.DrawTable(4, 21, 2);
-    t.draw();
+    int cakeX = 20;
+    cake.DrawCake(cakeX, 5, 9, 1, 1,")");
+
+     cake.DrawTable(4, 21, 2);
+    
   }
 }
