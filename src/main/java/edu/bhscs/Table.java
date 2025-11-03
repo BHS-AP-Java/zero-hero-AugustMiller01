@@ -42,8 +42,8 @@ public class Table {
     int indent = (cakeWidth - (width / 2)) / 2;
 
     int spacing = ((width - (legs * legWidth)) / legs);
-    int remainder = width % (legWidth + spacing);
-    width -= remainder;
+    int remainder = width % ((legWidth + spacing)*legs);
+    width -= remainder + (spacing - legWidth)-(legWidth/2);
     if(width <= cakeWidth){
       printIndent(indent, " ");
     }
@@ -58,7 +58,7 @@ public class Table {
     for (int i = 0; i < 4; i++) {
 
       System.out.println("");
-      if (width <= cakeWidth) {
+      if (width <= cakeWidth ) {
         printIndent(indent, " ");
       }
 

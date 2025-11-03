@@ -21,6 +21,6 @@ public class App {
     int cakeX = 40;
     cake.DrawCake(cakeX, 5, 9, 1, 1, ")");
 
-    t.DrawTable(4, 21, 2, cakeX);
+    t.DrawTable(4, 39, 2, cakeX);
   }
 }
