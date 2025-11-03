@@ -18,10 +18,9 @@ public class App {
     Table t = new Table(3, 24);
     Cake cake = bob.bakeCake();
     bob.FrostCake(cake);
-    int cakeX = 20;
-    cake.DrawCake(cakeX, 5, 9, 1, 1,")");
+    int cakeX = 40;
+    cake.DrawCake(cakeX, 5, 9, 1, 1, ")");
 
-     cake.DrawTable(4, 21, 2);
-    
+    t.DrawTable(4, 21, 2, cakeX);
   }
 }
