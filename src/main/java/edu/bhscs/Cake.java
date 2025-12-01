@@ -101,7 +101,63 @@ public class Cake {
     PrintChars("|", 0, "=", "|", baseWidth);
   }
 
+  public void DrawCake(int x, int y, int z, int slope, int stagger, String frosting, Table table) {
+    int transAxis = Math.min(z, y);
+    int maxWidth = x + 2 * transAxis * slope; // Calculate total width based on x, slope, and layers
+    // table width junk
+    /*int spacing = ((table.width - (table.legs * table.legWidth)) / table.legs);
+    int remainder = table.width % ((table.legWidth + spacing) * table.legs);
+    table.width -= remainder + (spacing - table.legWidth) - (table.legWidth / 2);*/
+    int indent = ((table.width - (x / 2)) / 2);
+
+    // Draw top border
+    if (x < table.width) {
+      table.printIndent(indent, " ");
+    }
+    DrawTopBorder(maxWidth, slope, transAxis + 1);
+
+    // Draw cake layers
+    int lastLeftSpace = (transAxis) * slope;
+    int lastWidth = x + 2 * 0 * slope;
+
+    for (int a = 0; a < transAxis; a++) {
+      int leftSpace = lastLeftSpace;
+      int currentWidth = lastWidth;
+      if (a == 0 || a % stagger == 0) {
+
+        leftSpace = (transAxis - a) * slope;
+        currentWidth = x + 2 * a * slope;
+        lastLeftSpace = leftSpace;
+        lastWidth = currentWidth;
+      } else {
+
+      }
+
+      // Adjust left indentation for each layer
+      if (frosting.equals("no")) {
+        if (x < table.width) {
+          table.printIndent(indent, " ");
+        }
+        PrintChars("|", leftSpace, " ", "|", currentWidth);
+
+      } else {
+        if (x < table.width) {
+          table.printIndent(indent, " ");
+        }
+        PrintChars("|", leftSpace, "-", "|", currentWidth);
+      }
+    }
+
+    // Draw cake base
+    int baseWidth = x + 2 * transAxis * slope;
+    if (x < table.width) {
+      table.printIndent(indent, " ");
+    }
+    PrintChars("|", 0, "=", "|", baseWidth);
+  }
+
   public void DrawTopBorder(int maxWidth, int slope, int transAxis) {
+
     // int topWidth = maxWidth - 2 * slope;
     int topWidth = maxWidth;
     for (int a = 0; a < transAxis; a++) {
@@ -126,5 +182,26 @@ public class Cake {
     // Add end character
     temp.append(end);
     System.out.println(temp.toString());
+  }
+
+  void centeringMath(Table t) {
+    int cakeWidth2 = this.x;
+    int tableWidth = t.GetWidth();
+    int offset = (this.x - tableWidth) / 2;
+    int tableOffset = 0;
+    int cakeOffset = 0;
+
+    if (cakeWidth2 < tableWidth) {
+      tableOffset = 0;
+      cakeOffset = Math.abs(offset);
+    } else {
+      cakeOffset = 0;
+      tableOffset = Math.abs(offset);
+    }
+  }
+
+  public void Draw(Table t) {
+    this.DrawCake(x, quality, z, price, stagger, frosting, t);
+    t.DrawTable(20);
   }
 }

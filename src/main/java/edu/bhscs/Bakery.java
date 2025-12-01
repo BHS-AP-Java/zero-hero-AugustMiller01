@@ -77,9 +77,11 @@ public class Bakery {
   public void SellCakeToPlayer(Player p) {
 
     String answer = p.giveAnswer("What cake do you want? (cake flavor)");
+    Boolean valid = false;
 
     for (Cake cake : cakes) {
       if (cake.ingredient.equals(answer)) {
+        valid = true;
         money += cake.price;
         System.out.println(
             "you bought the "
@@ -90,6 +92,9 @@ public class Bakery {
                 + cake.price);
         removeCakeFromMenu(cake);
       }
+    }
+    if (valid == false) {
+      SellCakeToPlayer(p);
     }
   }
 

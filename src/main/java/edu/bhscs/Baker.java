@@ -78,19 +78,19 @@ public class Baker {
 
     if (size.equals("s")) {
       cake.stagger = 1;
-      cake.y = 4;
-      cake.x = 4;
-      cake.z = 3;
-    } else if (size.equals("m")) {
-      cake.stagger = 2;
       cake.y = 6;
       cake.x = 6;
-      cake.z = 6;
+      cake.z = 5;
+    } else if (size.equals("m")) {
+      cake.stagger = 2;
+      cake.y = 10;
+      cake.x = 10;
+      cake.z = 10;
     } else if (size.equals("l")) {
       cake.stagger = 2;
-      cake.y = 11;
-      cake.x = 10;
-      cake.z = 8;
+      cake.y = 20;
+      cake.x = 17;
+      cake.z = 12;
     } else {
       cake.y = (int) (Math.random() * (8 - 3 + 1)) + 3;
       cake.x = (int) (Math.random() * (9 - 3 + 1)) + 3;

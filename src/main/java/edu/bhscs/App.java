@@ -1,9 +1,11 @@
 package edu.bhscs;
 
+import java.util.*;
+
 public class App {
 
   public static void main(String[] args) {
-    date_10_27();
+    date_11_25();
   }
 
   public static void date_10_21() {
@@ -13,14 +15,19 @@ public class App {
   }
 
   public static void date_10_27() {
+    Example e = new Example();
+    e.Example1();
     Player p = new Player("Me");
     Baker bob = new Baker(p);
-    Table t = new Table(3, 24);
+    Table t = new Table(3, 40, 3, 4);
     Cake cake = bob.bakeCake();
     bob.FrostCake(cake);
-    int cakeX = 40;
-    cake.DrawCake(cakeX, 5, 9, 1, 1, ")");
+    int cakeX = 80;
+    cake.DrawCake(cakeX, 5, 9, 1, 1, ")", t);
 
-    t.DrawTable(4, 39, 2, cakeX);
+    t.DrawTable(cakeX);
   }
+
+  public static void date_11_25() {
+    Face face = new Face();
 }
